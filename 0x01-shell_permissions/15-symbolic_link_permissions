@@ -1,2 +1,2 @@
 #!/bin/bash
-find ./ -name "_hello" -exec chown  betty:holberton {} +
+find ./ -name "_hello" -exec chown  betty:holberton {} /
