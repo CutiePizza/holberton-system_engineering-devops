@@ -1,0 +1,2 @@
+#!/bin/bash
+if ls --author hello = "guillaume"; then chown betty hello
