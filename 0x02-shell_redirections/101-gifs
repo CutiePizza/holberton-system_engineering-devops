@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a .* | find ./ -name "*.gif" -type f | cut -d '.' -f2 | cut -d '/' -f2 | sort -R
+ls -a .* | find ./ -name "*.gif" -type f | cut -d '.' -f2 | cut -d '/' -f2 | sort -r --ignore-case
