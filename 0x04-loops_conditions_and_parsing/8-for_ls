@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#Script that displays of content of the current directory in a list format
+for File in *; do
+echo "$File" | cut -f2 -d'-'
+done
