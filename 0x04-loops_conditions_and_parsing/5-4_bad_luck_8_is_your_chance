@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#Script that displays :
+#at the iteration 4 "bad luck"
+#at the iteration 8 "good luck"
+#otherwise "Holberton School"
+i=1
+while [ $i != 11 ]; do
+	if [ $i == 4 ]; then
+		echo "bad luck"
+	elif [ $i == 8 ]; then
+		echo "good luck"
+	else
+		echo "Holberton School"
+	fi
+	i=$((i + 1))
+done
