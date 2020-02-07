@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 #Script that displays numbers from 1 to 20
-i=1
-while [ $i != 21 ]; do
+i=0
+while [ $i != 20 ]; do
+	i=$((i + 1))
+	echo $i
 	case $i in
 		4)
 			echo "bad luck from China"
@@ -12,8 +14,5 @@ while [ $i != 21 ]; do
 		17)
 			echo "bad luck from Italy"
 			;;
-		*)
-			echo $i
 	esac
-	i=$((i + 1))
 done
