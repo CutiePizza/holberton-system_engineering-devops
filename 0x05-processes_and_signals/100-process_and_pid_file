@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # Printing pid of current script
 touch /var/run/holbertonschool.pid
-echo $$ >> /var/run/holbertonschool.pid
+echo $$ > /var/run/holbertonschool.pid
 while true; do
-trap "echo I hate the kill command" SIGTERM
+trap "echo I hate the kill command; rm /var/run/holbertonschool.pid" SIGTERM
 trap "echo Y U no love me?!" SIGINT
-trap "rm /var/run/holbertonschool.pid" SIGQUIT, SIGTERM
+trap "rm /var/run/holbertonschool.pid" SIGQUIT
 echo "To infinity and beyond"
 sleep 2
 done
