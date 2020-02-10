@@ -3,7 +3,7 @@
 touch /var/run/holbertonschool.pid
 echo $$ > /var/run/holbertonschool.pid
 while true; do
-trap 'echo I hate the kill command & exit & exit & [ -e /var/run/holbertonschool.pid ] && rm /var/run/holbertonschool.pid' SIGTERM
+trap 'echo I hate the kill command; [ -e /var/run/holbertonschool.pid ] && rm /var/run/holbertonschool.pid; exit' SIGTERM
 trap "echo Y U no love me?!" SIGINT
 if [ -e /var/run/holbertonschool.pid ]; then
 trap 'sudo rm /var/run/holbertonschool.pid & exit' SIGQUIT
