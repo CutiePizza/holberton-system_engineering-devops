@@ -2,10 +2,10 @@
 # Create file
 touch /var/run/holbertonschool.pid
 echo $$ > /var/run/holbertonschool.pid
-while true; do
 trap 'echo I hate the kill command; [ -e /var/run/holbertonschool.pid ] && sudo rm /var/run/holbertonschool.pid; exit' SIGTERM
 trap "echo Y U no love me?!" SIGINT
 trap '[ -e /var/run/holbertonschool.pid ] && sudo rm /var/run/holbertonschool.pid; exit' SIGQUIT
+while true; do
 echo "To infinity and beyond"
 sleep 2
 done
