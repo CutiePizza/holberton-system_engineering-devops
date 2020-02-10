@@ -3,9 +3,9 @@
 touch /var/run/holbertonschool.pid
 echo $$ > /var/run/holbertonschool.pid
 while true; do
-trap 'echo I hate the kill command; rm /var/run/holbertonschool.pid; trap SIGTERM; kill "$$"' SIGTERM
+trap 'echo I hate the kill command; rm /var/run/holbertonschool.pid; trap SIGINT; kill -2 "$$"' SIGTERM
 trap "echo Y U no love me?!" SIGINT
-trap 'rm /var/run/holbertonschool.pid; trap SIGQUIT; kill "$$"' SIGQUIT
+trap 'sudo rm /var/run/holbertonschool.pid; trap SIGINT; kill -2 "$$"' SIGQUIT
 echo "To infinity and beyond"
 sleep 2
 done
