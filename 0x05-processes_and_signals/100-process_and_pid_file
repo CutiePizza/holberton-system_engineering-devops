@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Create file
-sudo touch /var/run/holbertonschool.pid
-echo $$ > /var/run/holbertonschool.pid
+sudo touch /var/run/holbertonscript.pid
+echo $$ > /var/run/holbertonscript.pid
 while true
 do
 trap 'echo "I hate the kill command"; rm /var/run/holbertonscript.pid; exit' SIGTERM
