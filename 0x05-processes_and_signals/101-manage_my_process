@@ -5,7 +5,7 @@ if [ "$#" != 1 ]; then
 elif [ "$1" = "start" ]; then
 	./manage_my_process &
 	sudo touch /var/run/my_process.pid
-	echo $! >> /var/run/my_process.pid
+	echo "$!" >> /var/run/my_process.pid
 	echo "manage_my_process started"
 elif [ "$1" = "stop" ]; then
 	rm /var/run/my_process.pid
@@ -13,9 +13,9 @@ elif [ "$1" = "stop" ]; then
 	pkill -f manage_my_process
 elif [ "$1" = "restart" ]; then
 	rm /var/run/my_process.pid
-	./manage_my_process &
     	sudo touch /var/run/my_process.pid
-	echo $! >> /var/run/my_process.pid
+	echo "$!" >> /var/run/my_process.pid
+	./manage_py_process &
 	trap 'echo manage_my_process restarted' SIGTERM
 	pkill -f manage_my_process
 else
