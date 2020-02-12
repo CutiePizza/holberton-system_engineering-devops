@@ -12,12 +12,8 @@ elif [ "$1" = "stop" ]; then
 	trap "echo manage_my_process stopped" SIGTERM
 	pkill -f manage_my_process
 elif [ "$1" = "restart" ]; then
-	rm /var/run/my_process.pid
-    	sudo touch /var/run/my_process.pid
-	echo "$!" >> /var/run/my_process.pid
-	./manage_py_process &
-	trap 'echo manage_my_process restarted' SIGTERM
-	pkill -f manage_my_process
+	pkill -f manage_my_process &
+	trap 'echo manage_my_process restarted; sudo rm /var/run/my_process.pid; sudo touch /var/run/my_process.pid; ./manage_py_process &; echo "$!" >> /var/run/my_process.pid' SIGTERM
 else
 	echo "Usage: manage_my_process {start|stop|restart}"
 fi
