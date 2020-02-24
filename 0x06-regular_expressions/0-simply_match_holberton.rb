@@ -1,2 +1,5 @@
 #!/usr/bin/env ruby
-/Holberton/
+input = ARGV[0].scan(/Holberton/)
+for i in input do
+	puts(i)
+end
