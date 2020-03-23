@@ -4,6 +4,6 @@ ensure => 'present',
 mode => '0744',
 owner => 'www-data',
 group => 'www-data',
-path => '/tmp',
+path => '/tmp/holberton',
 content => 'I love Puppet',
 }
