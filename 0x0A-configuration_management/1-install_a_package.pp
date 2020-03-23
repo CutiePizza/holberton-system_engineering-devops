@@ -1,5 +1,5 @@
 # install a package
 package {'puppet-lint':
-ensure  => '[2.1.1, created]',
-provider=> 'gem',
+ensure   => '[2.1.1, created]',
+provider => 'gem',
 }
