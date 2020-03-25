@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#install nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+new_string="301 Moved Permanently"
+sed -i "s/404 Not Found/$new_string/" /redirect_me
+sudo service nginx start
+
