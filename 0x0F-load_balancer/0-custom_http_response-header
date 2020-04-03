@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+host=$(cat /etc/hostname)
+new_confif="add_header X-Served-By \"$host\";"
+file='/etc/nginx/nginx.conf'
+sudo sed -i "39i $new_confif" $file
+sudo service nginx restart
