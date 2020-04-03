@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #add header response
+sudo apt -y update
 host=$(cat /etc/hostname)
 new_config="\\\tadd_header X-Served-By \"$host\";"
 file='/etc/nginx/nginx.conf'
