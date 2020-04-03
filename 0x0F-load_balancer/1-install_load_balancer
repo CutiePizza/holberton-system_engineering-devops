@@ -5,6 +5,6 @@ sudo add-apt-repository ppa:vbernat/haproxy-1.6
 sudo apt-get -y update
 sudo apt-get -y install haproxy=1.6.\*
 file="/etc/haproxy/haproxy.cfg"
-new_config="\\\n\tbind :80\n\tserver 1054-web-01 35.243.214.205 check\n\tserver 1054-web-02 3.92.79.221 check\n\tbalance roundrobin\n\tmode http"
-echo $new_config >> $file
+new_config="frontend www\n\tdefault_backend webservers\n\tbind :80\n\tmode http\n\nbackend webservers\n\tserver 1054-web-01 35.243.214.205 check\n\tserver 1054-web-02 3.92.79.221 check\n\tbalance roundrobin\n\tmode http"
+echo -e $new_config >> $file
 sudo service haproxy restart
