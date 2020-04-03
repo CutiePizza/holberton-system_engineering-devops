@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 #nginx installation and home page content changes.                                                       
 sudo apt-get -y update
 sudo apt-get -y install nginx
