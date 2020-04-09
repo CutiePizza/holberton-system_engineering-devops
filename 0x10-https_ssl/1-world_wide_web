@@ -3,7 +3,7 @@
 
 dig_1() {
 
-dig "$1" | grep -A1 'ANSWER SECTION:' | tail -n1 | awk '{print "The subdomain "$2" is a", $4, "record and points to", $5}'
+dig "$1" | grep -A1 'ANSWER SECTION:' | tail -n1 | awk '{print "The subdomain '$2' is a", $4, "record and points to", $5}'
 
 }
 
