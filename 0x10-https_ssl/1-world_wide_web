@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# Bash script
+
+dig_1() {
+
+dig "$1" | grep -A1 'ANSWER SECTION:' | tail -n1 | awk '{print "The subdomain "$2" is a", $4, "record and points to", $5}'
+
+}
+
+dig_all() {
+adr="$1"
+for ((i=0; i < 4; i++)); do
+	if ((i == 0)); then
+		sub_point="www"
+		sub="www."
+	elif ((i == 1)); then
+		sub_point="lb-01"
+                sub="lb-01."
+	elif ((i == 2)); then
+		sub_point="web-01"
+                sub="web-01."
+	elif ((i == 3)); then
+		sub_point="web-02"
+                sub="web-02."
+
+	fi
+diggy=$sub$adr
+dig_1 "$diggy" "$sub_point" "$adr"
+done
+}
+
+if (( "$#" == 1 )); then
+dig_all "$1"
+elif (( "$#" == 2 )); then
+adr="$1"
+sub_point="$2"
+diggy=$sub$adr
+dig_1 "$diggy" "$sub_point" "$adr"
+fi
