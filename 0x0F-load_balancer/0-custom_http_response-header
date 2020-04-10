@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 #config config file
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo service nginx start
 host=$(cat /etc/hostname)
 new_config="\\\tadd_header X-Served-By \"$host\";"
 file='/etc/nginx/nginx.conf'
