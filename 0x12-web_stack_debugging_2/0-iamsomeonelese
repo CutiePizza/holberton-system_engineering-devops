@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Who am i
-su - "$1"
+sudo -u "$1"
 whoami
