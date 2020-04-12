@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 # Who am i
-if (( "$#" > 1 )); then
 su - "$1"
-fi
 whoami
