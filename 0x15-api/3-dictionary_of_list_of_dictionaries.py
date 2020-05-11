@@ -11,7 +11,7 @@ if __name__ == "__main__":
     file_name = 'todo_all_employees.json'
     with open(file_name, "w") as json_file:
         r = requests.get('https://jsonplaceholder.typicode.com/users/')
-        i = 1
+        i = 0
         my_employees = {}
         for user in r.json():
             user_id = r.json()[i]['id']
@@ -27,6 +27,6 @@ if __name__ == "__main__":
                 dicti["username"] = username
                 dicti["task"] = task["title"]
                 dicti["completed"] = task["completed"]
-                my_employees[user_id].append(dicti)
+                my_employees[str(user_id)].append(dicti)
             i = i + 1
         json.dump(my_employees, json_file)
