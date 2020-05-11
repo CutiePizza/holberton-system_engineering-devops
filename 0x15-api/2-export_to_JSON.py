@@ -3,7 +3,6 @@
 Task 2
 """
 import json
-import io
 import requests
 import sys
 
