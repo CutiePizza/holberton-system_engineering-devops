@@ -26,5 +26,4 @@ if __name__ == "__main__":
             dic["completed"] = task["completed"]
             dic["username"] = username
             my_tasks[user_id].append(dic)
-            dic = {}
         json.dump(my_tasks, json_file)
