@@ -17,8 +17,8 @@ if __name__ == "__main__":
             'https://jsonplaceholder.typicode.com/users/{}/todos'.format(
                 user_id)
             )
-    my_tasks = {user_id: []}
-    file_name = user_id + '.json'
+    my_tasks = {str(user_id): []}
+    file_name = str(user_id) + '.json'
     with open(file_name, "w") as json_file:
         for task in r.json():
             dic = {}
