@@ -21,7 +21,7 @@ if __name__ == "__main__":
     my_list = []
     file_name = user_id + '.csv'
     with open(file_name, "w") as csv_file:
-        writer = csv.writer(csv_file)
+        writer = csv.writer(csv_file,  quoting=csv.QUOTE_ALL)
         for task in r.json():
             my_list.append(user_id)
             my_list.append(username)
