@@ -14,8 +14,8 @@ if __name__ == "__main__":
         i = 1
         my_employees = {}
         for user in r.json():
-            user_id = r.json()[i]['id']
-            username = r.json()[i]['username']
+            user_id = str(r.json()[i]['id'])
+            username = str(r.json()[i]['username'])
             r2 = requests.get(
                     'https://jsonplaceholder.typicode.com/users/{}/todos'
                     .format(
