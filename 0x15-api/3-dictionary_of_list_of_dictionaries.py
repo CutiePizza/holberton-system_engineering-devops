@@ -24,7 +24,7 @@ if __name__ == "__main__":
             my_employees[str(user_id)] = []
             for task in r2.json():
                 dicti = {}
-                dicti["username"] = username
+                dicti["username"] = str(username)
                 dicti["task"] = task["title"]
                 dicti["completed"] = task["completed"]
                 my_employees[str(user_id)].append(dicti)
