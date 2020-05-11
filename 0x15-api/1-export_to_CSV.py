@@ -3,6 +3,7 @@
 Task 1
 """
 import csv
+import io
 import requests
 import sys
 
@@ -22,9 +23,9 @@ if __name__ == "__main__":
     with open(file_name, "w") as csv_file:
         writer = csv.writer(csv_file)
         for task in r.json():
-            my_list.append(str(user_id))
-            my_list.append(str(username))
-            my_list.append(str(task['completed']))
-            my_list.append(str(task['title']))
+            my_list.append(user_id)
+            my_list.append(username)
+            my_list.append(task['completed'])
+            my_list.append(task['title'])
             writer.writerow(my_list)
             my_list = []
