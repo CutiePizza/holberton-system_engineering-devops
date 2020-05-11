@@ -9,9 +9,9 @@ import sys
 if __name__ == "__main__":
 
     file_name = 'todo_all_employees.json'
-    with open(file_name, "w", newline="") as json_file:
+    with open(file_name, "w") as json_file:
         r = requests.get('https://jsonplaceholder.typicode.com/users/')
-        i = 0
+        i = 1
         my_employees = {}
         for user in r.json():
             user_id = r.json()[i]['id']
