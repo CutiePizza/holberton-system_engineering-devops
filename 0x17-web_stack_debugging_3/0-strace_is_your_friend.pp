@@ -1,3 +1,4 @@
+# Removing extra p
 exec {'Additional p removed':
 path     => '/usr/bin/:/bin/:/usr/sbin/',
 provider => 'shell',
