@@ -19,5 +19,5 @@ Customers have been reporting that they can’t access the pizza site and it is 
 The 500 Internal server occured because of typo made in the file /var/www/html/wp-settings.php on the line 137. It was written “class-wp-locale.phpp” instead of “class-wp-locale.php”
 
 The server came back into service after removing that additional “p” on that line by creating a puppet file that does the job.
-Corrective and preventative measures
+# Corrective and preventative measures
 To prevent those problems we have to check that the server is functional every now and then by sending a curl request.
