@@ -9,5 +9,5 @@ command  => "sudo sed -i 's/15/4096/' /etc/default/nginx",
 exec {'Restart nginx':
 path     => '/usr/bin/:/bin/:/usr/sbin/',
 provider => 'shell',
-command  => "sudo service nginx restart",
+command  => 'sudo service nginx restart',
 }
